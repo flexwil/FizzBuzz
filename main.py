@@ -1,3 +1,17 @@
+# x = "Ich liebe Python <3"
+# y = x.find("P")
+# print(len(x))
+# z = str(len(x))
+# print(z + "ist jetzt ", type(z))
+# print(x[y:])
+# print(x.split())
+# print(x.upper())
+# print(x.lower())
+#
+# print(10/3)
+# print(10%3)
+
+
 #age = int(input("Wie alt bist du? "))
 #number = int(input("Wie viele Karten brauchst du? "))
 #if age < 18:
@@ -40,28 +54,65 @@ leere_liste = []
 #
 # liste_tup = ("Banane", "Weintrauben", "Karotte")
 # print(type(liste_tup))
+#-----------------------------------------------------------------------------------------------------------------------
+# einkaufsliste = []
+# # Artikel hinzufügen
+# # Aktion-> hinzufügen, entfernen, anzeigen, beenden
+# menu = 0
+#
+# while True:
+#     menu = input("1 = entfernen, 2 = anzeigen, 3 = beenden oder füge einen Artikel hinzu: ")
+#     if menu == "1":  # entfernen
+#         erase = input("Was möchtest du löschen? ")
+#         if erase in einkaufsliste:
+#             einkaufsliste.remove(erase)
+#             print("Der Artikel ", erase, "wurde gelöscht.")
+#         else:
+#             print(erase, " ist bisher nicht auf der Liste")
+#
+#     elif menu == "2":  # anzeigen
+#         print("Deine Einkaufsliste: ", einkaufsliste)
+#
+#     elif menu == "3":  # beenden
+#         break
+#
+#     else:
+#         einkaufsliste.append(menu)
+#         print(menu, " wurde hinzugefügt.")
+#-----------------------------------------------------------------------------------------------------------------------
+# from random import randint
+# zahl = randint(1,100)
+#
+# while True:
+#     guess = int(input("Rate die richtige Zahl zwischen 1 - 100: "))
+#     if zahl == guess:
+#         print("Herzlichen Glückwunsch! Du hast richtig geraten!")
+#         break
+#     elif zahl < guess:
+#         print("Deine Zahl ist leider zu groß!")
+#     else:
+#         print("Deine Zahl ist leider zu klein!")
+# number = 15
+# player = input('Du bist dran: ')
+# if number % 3 == 0 and number % 5 == 0 and player != 'FizzBuzz':
+#     print('LOST!')
+# else:
+#     print('Bravo!')
 
-einkaufsliste = []
-# Artikel hinzufügen
-# Aktion-> hinzufügen, entfernen, anzeigen, beenden
-menu = 0
+user_input = 1111
+number = 15
+f = 3
+b = 5
+
+
+def input_check(user_input, number, f, b):
+    if number % f == 0 and number % b == 0 and user_input != 'FizzBuzz':
+        return True
+    elif number % f
+    return False
 
 while True:
-    menu = input("1 = entfernen, 2 = anzeigen, 3 = beenden oder füge einen Artikel hinzu: ")
-    if menu == "1":  # entfernen
-        erase = input("Was möchtest du löschen? ")
-        if erase in einkaufsliste:
-            einkaufsliste.remove(erase)
-            print("Der Artikel ", erase, "wurde gelöscht.")
-        else:
-            print(erase, " ist bisher nicht auf der Liste")
-
-    elif menu == "2":  # anzeigen
-        print("Deine Einkaufsliste: ", einkaufsliste)
-
-    elif menu == "3":  # beenden
+    if input_check(user_input, number, f, b):
+        print('lost')
         break
-
-    else:
-        einkaufsliste.append(menu)
-        print(menu, " wurde hinzugefügt.")
+    print('1')
