@@ -1,4 +1,4 @@
-
+# pc spielt alleine
 def pc_vs_pc():
     for i in range(1, rounds):
         if i % f == 0 and i % b == 0:
@@ -10,17 +10,18 @@ def pc_vs_pc():
         else:
             print(i)
 
+# Main Function für Spiel Mensch ggn PC
 def user_vs_pc(number):
     while True:
         number += 1
-        input_pc()
+        input_pc(number)
         number += 1
-        input_user()
-        if input_check(user, number, f, b):
+        if not input_check(input_user(), number, f, b):
             print('lost')
             break
 
-def input_pc():
+# PC Ausgabe Berechnung
+def input_pc(number):
     if number % f == 0 and number % b == 0:
         print('FizzBuzz')
     elif number % f == 0:
@@ -31,23 +32,26 @@ def input_pc():
         print(number)
     return number
 
+# Eingabe Nutzer
 def input_user():
     user = input('Du bist dran: ')
     return user
 
+# Überprüfung Eingabe
 def input_check(user, number, f, b):
-    if number % f == 0 and number % b == 0 and user != 'FizzBuzz':
-        return True
-    elif number % f == 0 and user != 'Fizz':
-        return True
-    elif number % b == 0 and user != 'Buzz':
-        return True
-    elif number == int(user):
-        return True
+    if number % f == 0 and number % b == 0:
+        return user == 'FizzBuzz'
+    elif number % f == 0:
+        return user == 'Fizz'
+    elif number % b == 0:
+        return user == 'Buzz'
     else:
-        return False
+        return number == int(user)
+
+
 
 number = 0
+
 f = int(input('Welche Zahl ist Fizz?: '))
 b = int(input('Welche Zahl ist Buzz?: '))
 opp = input('Drücke 1 wenn du gegen den PC spielen möchtest, ansonsten klicke einfach weiter...')
