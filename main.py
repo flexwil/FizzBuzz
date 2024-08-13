@@ -99,20 +99,40 @@ leere_liste = []
 # else:
 #     print('Bravo!')
 
-user_input = 1111
-number = 15
-f = 3
-b = 5
+# user_input = 1111
+# number = 15
+# f = 3
+# b = 5
+#
+#
+# def input_check(user_input, number, f, b):
+#     if number % f == 0 and number % b == 0 and user_input != 'FizzBuzz':
+#         return True
+#     elif number % f
+#     return False
+#
+# while True:
+#     if input_check(user_input, number, f, b):
+#         print('lost')
+#         break
+#     print('1')
+player_score = 12
+player_name = input(f'Dein Score beträgt {player_score} Gibt deinen Namen ein: ')
+
+highscore = 'highscore.txt'
+
+def save_score():
+    writescore = player_name + '...' + str(player_score) + '\n'
+    myhighscore = open(highscore, 'a')
+    myhighscore.write(writescore)
+    myhighscore.close()
+
+def show_score():
+    myhighscore = open(highscore, 'r')
+    print(myhighscore.read())
+    myhighscore.close()
+
+save_score()
+show_score()
 
 
-def input_check(user_input, number, f, b):
-    if number % f == 0 and number % b == 0 and user_input != 'FizzBuzz':
-        return True
-    elif number % f
-    return False
-
-while True:
-    if input_check(user_input, number, f, b):
-        print('lost')
-        break
-    print('1')
